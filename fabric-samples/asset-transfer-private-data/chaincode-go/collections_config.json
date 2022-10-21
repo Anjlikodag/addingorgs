@@ -1,0 +1,35 @@
+[
+ {
+   "name": "assetCollection",
+   "policy": "OR('AppleMSP.member', 'FiservMSP.member')",
+   "requiredPeerCount": 1,
+   "maxPeerCount": 1,
+   "blockToLive":1000000,
+   "memberOnlyRead": true,
+   "memberOnlyWrite": true
+},
+ {
+   "name": "AppleMSPPrivateCollection",
+   "policy": "OR('AppleMSP.member')",
+   "requiredPeerCount": 0,
+   "maxPeerCount": 1,
+   "blockToLive":3,
+   "memberOnlyRead": true,
+   "memberOnlyWrite": false,
+   "endorsementPolicy": {
+     "signaturePolicy": "OR('AppleMSP.member')"
+   }
+ },
+ {
+   "name": "FiservMSPPrivateCollection",
+   "policy": "OR('FiservMSP.member')",
+   "requiredPeerCount": 0,
+   "maxPeerCount": 1,
+   "blockToLive":3,
+   "memberOnlyRead": true,
+   "memberOnlyWrite": false,
+   "endorsementPolicy": {
+     "signaturePolicy": "OR('FiservMSP.member')"
+   }
+  }
+]
